@@ -1,1 +1,1 @@
-web: gunicorn DataModel:app
+web: gunicorn app:app
