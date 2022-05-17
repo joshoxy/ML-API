@@ -2,15 +2,13 @@ from flask import Flask,request,jsonify
 import numpy as np
 import pickle
 model = pickle.load(open('model.pkl','rb'))
-print(model)
 
 app = Flask(__name__)
 @app.route('/')
 def index():
-    #return str(round_accuracy)
     return "Hello world"
 
-@app.route('/predict',methods=['POST'])
+@app.route('/',methods=['POST'])
 def predict():
     Recency = request.form.get('Recency (months)')
     Frequency = request.form.get('Frequency (times)')
