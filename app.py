@@ -1,4 +1,4 @@
-from flask import Flask,request,jsonify
+from flask import Flask,request,jsonify,render_template
 import numpy as np
 import pickle
 model = pickle.load(open('model.pkl','rb'))
@@ -14,7 +14,6 @@ def predict():
     Frequency = request.form.get('Frequency (times)')
     Monetary = request.form.get('Monetary (c.c. blood)')
     Time = request.form.get('Time (months)')
-    np.any(np.isnan(model))
     input_query = np.array([[Recency,Frequency,Monetary,Time]])
     result = model.predict(input_query)[0]
     return jsonify({'prediction':str(result)})
