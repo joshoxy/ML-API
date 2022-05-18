@@ -16,6 +16,7 @@ from sklearn.metrics import accuracy_score
 rf = RandomForestClassifier()
 rf.fit(X_train,y_train)
 
+
 y_pred = rf.predict(X_test)
 accuracy = accuracy_score(y_test,y_pred)
 # print(accuracy_score(y_test,y_pred))

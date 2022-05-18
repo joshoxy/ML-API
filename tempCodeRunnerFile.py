@@ -1,1 +1,3 @@
-y_pred
+@app.route('/')
+# def index():
+#     return "Hello world"
